@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块</title>
+</head>
+<body ng-app="app">
+    模块Module：<input type="text" placeholder="请输入过滤信息" ng-model="content">
+    <ul ng-controller="list">
+        <li ng-repeat="i in names | filter:content">{{$index+1}}、今年{{i.name}}已经{{i.age}}岁了。</li>
+    </ul>
+    <script src="../js/angular.js"></script>
+    <script>
+        var app=angular.module("app",[]);
+        app.controller("list",function($scope){
+            $scope.names=[
+                {name:"张三",age:18},
+                {name:"李四",age:24},
+                {name:"王五",age:43}
+            ]
+        })
+    </script>
+</body>
+</html>

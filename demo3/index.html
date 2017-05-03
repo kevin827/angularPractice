@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复制，粘贴，剪切</title>
+</head>
+<body ng-app="app">
+<ul>
+    <li>
+        <input type="text" placeholder="copy me" ng-copy="copy=true" value="copy me" />
+        <span ng-show="copy">复制成功 cppy: {{copy}}</span>
+    </li>
+    <li>
+        <input type="text" placeholder="cut me" ng-cut="cut=true" value="cut me" />
+        <span ng-show="cut">剪切成功 cut: {{cut}}</span>
+    </li>
+    <li>
+        <input type="text" placeholder="paste me" ng-paste="paste=true" />
+        <span ng-show="paste">粘贴成功 paste: {{paste}}</span>
+    </li>
+</ul>
+<script src="../js/angular.js"></script>
+<script>
+    var app=angular.module("app",[]);
+</script>
+</body>
+</html>
